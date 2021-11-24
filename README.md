@@ -1,6 +1,7 @@
-# Fun Landing Page
+# Complete website landing page
 
-#### <i>Parallax-Scrolling - no library - plain react/javascript/typescript
+#### Accordian component
+#### Customized form components - Checkboxes, buttons, buttons with/without icons
 #### React
 #### Styled Components
 #### vitejs
