@@ -9,7 +9,6 @@ export const Main = () => {
     <PageContainer>
       <Landing />
       <Footer />
-
     </PageContainer>
   );
 };

@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import bgContent from "../../../assets/images/BG-Content.png";
 import { designVariables } from "../../styles/globalVariables";
 import { Accordian, Tile1, Tile2, Tile3 } from "../../components";
+import { Banner } from "../banner/Banner";
 export const ContentSection = () => {
   return (
     <Container>
+      <Banner />
       <TileContainer>
         <Tile1 />
         <Tile2 />

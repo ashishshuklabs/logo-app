@@ -59,7 +59,7 @@ const StyledNav = styled.nav`
       justify-content: center;
       margin: auto 0;
       .icon-button {
-        margin: 0 2rem;
+        margin: 0 .5rem;
         cursor: pointer;
         padding: 0;
         border: none;
@@ -84,7 +84,7 @@ export const Navigation = () => {
               title="join us"
               icon={<img src={ceda} alt="join us" />}
               iconPosition="left"
-              width="10rem"
+              width="8rem"
             />
           </div>
           <div className="transparent-button-wrapper">
@@ -95,7 +95,7 @@ export const Navigation = () => {
                 title="sign in"
                 icon={<img src={avatar} alt="user" />}
                 iconPosition="left"
-                width="10rem"
+                width="8rem"
               />
             </div>
             <div className="text-icon-button ">
@@ -105,7 +105,7 @@ export const Navigation = () => {
                 title="support us"
                 icon={<img src={support} alt="support" />}
                 iconPosition="left"
-                width="10rem"
+                width="8rem"
               />
             </div>
             <div className="text-icon-button ">
@@ -115,7 +115,7 @@ export const Navigation = () => {
                 title="contact"
                 icon={<img src={phone} alt="phone" />}
                 iconPosition="left"
-                width="10rem"
+                width="8rem"
               />
             </div>
           </div>

@@ -27,11 +27,15 @@ const StyledInput = styled.input<{ width: string }>`
   color: ${designVariables.colorTextPrimary};
   border-bottom: 2px solid ${designVariables.colorTextPrimary};
   font-size: 1rem;
-  font-style: italic;
   transition: ${designVariables.transition};
   &:focus {
     border: 0;
     outline: none;
     border-bottom: 2px solid ${designVariables.palette.red100};
+  }
+  &::placeholder {
+    padding-left: 0.5rem;
+    color: ${designVariables.colorBodyText};
+    font-style: italic;
   }
 `;

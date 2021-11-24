@@ -15,7 +15,7 @@ export const Footer = () => {
 };
 
 const StyledFooter = styled.footer`
-  height: 59rem;
+  height: 100%;
   width: 100%;
   background-color: ${designVariables.colorFooterBg};
   overflow: hidden;

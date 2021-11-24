@@ -8,7 +8,14 @@ export const FormWithNews = () => {
   return (
     <Wrapper>
       <div className="grid-2">
-        <div className="form">
+        <div className="form-container">
+          <div className="text-container">
+            <h4 className="title">Stay up to date</h4>
+            <p className="description">
+              Subscribe to get the latest news and insights from our weekly
+              update and research releases.
+            </p>
+          </div>
           <Form />
         </div>
         <div className="content-container">
@@ -38,14 +45,22 @@ export const FormWithNews = () => {
 const Wrapper = styled.div`
   width: 100%;
   .grid-2 {
-    margin: 4rem 2rem;
+    margin: 4rem auto;
     display: grid;
     grid-template-columns: 3.5fr 2.5fr;
-    .form {
-      padding: 0 6rem;
+    .form-container {
+      padding: 0 4rem;
+      .text-container {
+        color: ${designVariables.colorBodyText};
+        margin-bottom: 1rem;
+        max-width: 60%;
+        .text{
+          font-size: 1rem;
+        }
+      }
     }
     .content-container {
-      padding: 0 6rem;
+      padding: 0 4rem;
       display: flex;
       flex-direction: column;
       .title {

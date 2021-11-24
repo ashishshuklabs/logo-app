@@ -32,7 +32,7 @@ export const Information = () => {
 const StyledInformation = styled.div`
   width: 100%;
   .grid-2 {
-    margin: 4rem 2rem;
+    margin: 4rem auto;
     display: grid;
     grid-template-columns: 3.5fr 2.5fr;
     color: ${designVariables.colorTextPrimary};
@@ -46,11 +46,11 @@ const StyledInformation = styled.div`
     font-size: 1.5rem;
     line-height: 1.5;
     font-weight: 300;
-    padding: 0 6rem;
+    padding: 0 4rem;
     text-align: left;
   }
   .list-container {
-    padding: 0 6rem;
+    padding: 0 4rem;
   }
   .list-item {
     line-height: 2;

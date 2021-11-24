@@ -70,14 +70,14 @@ const StyledButton = styled.button<StyledButtonProps>`
       height: 0.95rem;
       ${(props) =>
         props.iconPosition === "left"
-          ? { paddingRight: ".5rem" }
+          ? { paddingRight: ".4rem" }
           : { paddingleft: ".75rem" }}
       img {
         height: 100%;
       }
     }
     .title {
-      font-size: 0.95rem;
+      font-size: 0.875rem;
       color: ${designVariables.colorNavbarText};
     }
   }

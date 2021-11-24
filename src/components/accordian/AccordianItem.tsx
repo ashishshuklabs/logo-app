@@ -42,16 +42,21 @@ export const AccordianItem = (props: AccordianItemProps) => {
           <h3 className="header-title">{props.headerTitle}</h3>
         </div>
         <div className="buttons">
-          <button className="expand" onClick={(e) => handleClick(e, "expand")}>
-            <img src={expand} alt="expand" />
-            {/* <Expand width="3.5rem" height="3.5rem" /> */}
-          </button>
-          <button
-            className="collapse"
-            onClick={(e) => handleClick(e, "collapse")}
-          >
-            <img src={collapse} alt="collapse" />
-          </button>
+          <div className="wrapper">
+            <button
+              className="expand"
+              onClick={(e) => handleClick(e, "expand")}
+            >
+              <img src={expand} alt="expand" />
+              {/* <Expand width="3.5rem" height="3.5rem" /> */}
+            </button>
+            <button
+              className="collapse"
+              onClick={(e) => handleClick(e, "collapse")}
+            >
+              <img src={collapse} alt="collapse" />
+            </button>
+          </div>
         </div>
       </div>
       <div className="content">{props.content}</div>
@@ -89,10 +94,25 @@ const Wrapper = styled.div<{
     }
 
     .buttons {
-      width: 3.5rem;
-      height: 3.5rem;
-      transition: ${designVariables.transition};
+      .wrapper {
+        width: 4.5rem;
+        height: 4.5rem;
+        transition: ${designVariables.transition};
+        position: relative;
+        &:hover {
+          border-radius: 100rem;
+          background: #ffe7e7;
+        }
+      }
 
+      button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 3.5rem;
+        height: 3.5rem;
+      }
       .expand {
         ${(props) =>
           props.showButton.plus ? { display: "block" } : { display: "none" }}
@@ -106,10 +126,6 @@ const Wrapper = styled.div<{
         background: transparent;
         border: 0;
         cursor: pointer;
-      }
-      &:hover {
-        border-radius: 100rem;
-        background: #ffe7e7;
       }
     }
   }

@@ -23,14 +23,14 @@ export const Tile = (props: TileProps) => {
 
 const StyledTile = styled.div<Omit<TileProps, "bodyText" | "title">>`
   max-width: 22rem;
-  max-height: 25rem;
-  height: 100%;
+  height: 21rem;
   background-color: ${designVariables.colorTileBg};
   position: relative;
   display: flex;
   flex-direction: column;
   padding: 0 2rem;
   margin: 0 1rem;
+  justify-content: space-evenly;
   .title {
     height: 6rem;
     width: 100%;

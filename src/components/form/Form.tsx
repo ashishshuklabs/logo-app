@@ -26,7 +26,7 @@ export const Form = () => {
           color="transparent"
           hoverColor={designVariables.palette.dark400}
           title="Subscribe"
-          buttonStyle={{ width: "10rem" }}
+          buttonStyle={{ width: "10rem", height: "2.7rem" }}
         />
       </div>
     </StyledForm>
@@ -39,7 +39,7 @@ const StyledForm = styled.form`
     &.grid-2 {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-gap: 3rem;
+      grid-gap: 10%;
       margin: 0;
     }
   }
@@ -51,7 +51,7 @@ const StyledForm = styled.form`
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       margin: 0;
-      grid-gap: 3rem;
+      grid-gap: 10%;
     }
     .checkbox-container {
       display: flex;

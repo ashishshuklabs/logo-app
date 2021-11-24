@@ -37,7 +37,7 @@ const StyledButton = styled.div<StyledButtonProps>`
     transition: ${designVariables.transition};
     color: ${(props) =>
       props.color ? props.color : designVariables.colorBodyText};
-    margin: 0 1rem;
+    margin: 0 .5rem;
     ${(props) => (props.withIcon ? { paddingRight: ".75rem" } : "")}
     font-weight: 600;
     line-height: 1.2;
