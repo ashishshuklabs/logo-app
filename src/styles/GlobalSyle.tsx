@@ -64,10 +64,10 @@ h1,h2,h3,h4,h5{
   text-transform: capitalize;
 }
 h1{
-  font-size: 4.75rem;
+  font-size: 3rem;
 }
 h2{
-  font-size: 4rem;
+  font-size: 2rem;
 }
 h3{
   font-size: 1.75rem;
