@@ -123,6 +123,7 @@ const Wrapper = styled.div`
       grid-template-columns: 1fr;
       .form-container {
         margin-bottom: 4rem;
+        padding: 0 2rem;
         button {
           width: 8rem;
         }
