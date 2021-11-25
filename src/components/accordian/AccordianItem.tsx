@@ -140,6 +140,7 @@ const Wrapper = styled.div<{
   @media (max-width: 767px) {
     .header {
       justify-content: space-between;
+      padding-left: 1rem;
       &-title {
         max-width: 30rem;
         font-size: 1.125rem;

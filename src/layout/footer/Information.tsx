@@ -43,6 +43,7 @@ const StyledInformation = styled.div`
     background-color: ${designVariables.colorTextPrimary};
   }
   .text {
+    opacity: 0.8;
     font-size: 1.5rem;
     line-height: 1.5;
     font-weight: 300;
@@ -66,6 +67,14 @@ const StyledInformation = styled.div`
     }
     &.space-bottom {
       padding-bottom: 1rem;
+    }
+  }
+  @media (max-width: 767px) {
+    .grid-2 {
+      grid-template-columns: 1fr;
+    }
+    .text {
+      margin-bottom: 2rem;
     }
   }
 `;

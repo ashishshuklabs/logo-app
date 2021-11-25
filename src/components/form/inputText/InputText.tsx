@@ -36,6 +36,8 @@ const StyledInput = styled.input<{ width: string }>`
   &::placeholder {
     padding-left: 0.5rem;
     color: ${designVariables.colorBodyText};
+    opacity: 0.5;
     font-style: italic;
+    font-size: 0.9rem;
   }
 `;

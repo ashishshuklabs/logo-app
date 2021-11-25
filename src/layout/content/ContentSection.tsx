@@ -23,6 +23,10 @@ const TileContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
   margin: 2rem auto;
+  @media (max-width: 767px) {
+    justify-content: flex-start;
+    overflow-x: scroll;
+  }
 `;
 const Container = styled.div`
   min-height: calc(100vh - 6rem);

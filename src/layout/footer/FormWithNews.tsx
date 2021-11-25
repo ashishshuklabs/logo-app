@@ -54,8 +54,11 @@ const Wrapper = styled.div`
         color: ${designVariables.colorBodyText};
         margin-bottom: 1rem;
         max-width: 60%;
-        .text{
+        .text {
           font-size: 1rem;
+        }
+        .description {
+          opacity: 0.8;
         }
       }
     }
@@ -113,6 +116,17 @@ const Wrapper = styled.div`
       font-weight: 400;
       letter-spacing: 0.1rem;
       text-align: justify;
+    }
+  }
+  @media (max-width: 767px) {
+    .grid-2 {
+      grid-template-columns: 1fr;
+      .form-container {
+        margin-bottom: 4rem;
+        button {
+          width: 8rem;
+        }
+      }
     }
   }
 `;

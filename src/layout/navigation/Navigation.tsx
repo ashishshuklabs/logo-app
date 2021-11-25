@@ -74,31 +74,30 @@ const StyledNav = styled.nav`
   }
   @media (max-width: 767px) {
     .button-container {
-      .top-row {
-        display: none;
-      }
-      .bottom-row {
-        display: none;
-      }
+      display: none;
     }
 
     .mobile-menu {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-right: 1rem;
+      width: 100%;
       .icon-button {
-        margin: 0 0.5rem;
+        margin: 0 2rem;
         cursor: pointer;
         padding: 0;
         border: none;
         outline: none;
         background: transparent;
-        order: 2;
+        order: 0;
       }
 
       .hamburger {
         width: 2rem;
         height: 2rem;
         margin: 0 1rem;
-        order: 3;
+        order: -1;
       }
     }
   }

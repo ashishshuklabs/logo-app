@@ -60,7 +60,7 @@ const StyledForm = styled.form`
         line-height: 0.9;
         color: ${designVariables.colorTextPrimary};
         align-self: center;
-        text-align: justify;
+        text-align: left;
       }
     }
     button {
