@@ -72,4 +72,12 @@ const StyledBanner = styled.div`
       background: transparent;
     }
   }
+  @media (max-width: 767px) {
+    .image-container {
+      display: none;
+    }
+    .content {
+      padding-left: 1rem;
+    }
+  }
 `;

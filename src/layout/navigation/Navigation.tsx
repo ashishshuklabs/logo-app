@@ -9,6 +9,7 @@ import support from "../../assets/icon/Support.png";
 import { Search } from "../../components/icon/Search";
 import { TextButton } from "../../components/form/button/TextButton";
 import logo from "../../assets/images/Vector.png";
+import hamburger from "../../assets/icon/Group 190.png";
 const StyledNav = styled.nav`
   position: relative;
   max-width: 100%;
@@ -59,7 +60,7 @@ const StyledNav = styled.nav`
       justify-content: center;
       margin: auto 0;
       .icon-button {
-        margin: 0 .5rem;
+        margin: 0 0.5rem;
         cursor: pointer;
         padding: 0;
         border: none;
@@ -68,12 +69,58 @@ const StyledNav = styled.nav`
       }
     }
   }
+  .mobile-menu {
+    display: none;
+  }
+  @media (max-width: 767px) {
+    .button-container {
+      .top-row {
+        display: none;
+      }
+      .bottom-row {
+        display: none;
+      }
+    }
+
+    .mobile-menu {
+      display: block;
+      .icon-button {
+        margin: 0 0.5rem;
+        cursor: pointer;
+        padding: 0;
+        border: none;
+        outline: none;
+        background: transparent;
+        order: 2;
+      }
+
+      .hamburger {
+        width: 2rem;
+        height: 2rem;
+        margin: 0 1rem;
+        order: 3;
+      }
+    }
+  }
 `;
 export const Navigation = () => {
+  const SearchButton = () => (
+    <button className="icon-button">
+      <Search
+        hoverColor={designVariables.palette.light300}
+        height="1.5rem"
+        width="1.5rem"
+      />
+    </button>
+  );
   return (
     <StyledNav>
       <div className="logo-container">
         <img src={logo} alt="logo" className="logo" />
+      </div>
+      <div className="mobile-menu">
+        <SearchButton />
+        <img src={hamburger} alt="mobile menu" className="image" />
       </div>
       <div className="button-container">
         <div className="top-row">
@@ -163,14 +210,7 @@ export const Navigation = () => {
             color={designVariables.colorNavbarText}
             hoverColor={designVariables.palette.red100}
           />
-
-          <button className="icon-button">
-            <Search
-              hoverColor={designVariables.palette.light300}
-              height="1.5rem"
-              width="1.5rem"
-            />
-          </button>
+          <SearchButton />
         </div>
       </div>
     </StyledNav>

@@ -3,10 +3,12 @@ import styled from "styled-components";
 import { designVariables } from "../../styles/globalVariables";
 import { Accordian, Tile1, Tile2, Tile3 } from "../../components";
 import { Banner } from "../banner/Banner";
+import { ContentTextBlock } from "../content-text-block/ContentTextBlock";
 export const ContentSection = () => {
   return (
     <Container>
       <Banner />
+      <ContentTextBlock />
       <TileContainer>
         <Tile1 />
         <Tile2 />
