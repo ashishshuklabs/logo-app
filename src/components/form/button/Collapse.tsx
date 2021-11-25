@@ -1,13 +1,12 @@
 import React from "react";
-import styled from "styled-components";
-import { callbackify } from "util";
-import { designVariables } from "../../styles/globalVariables";
-import { IconButton } from "../form/button/IconButton";
+import { IconButtonTemplate } from "./IconButtonTemplate";
 
-export const Expand = (props: {
+export const Collapse = (props: {
   width?: string;
   height?: string;
   hoverColor?: string;
+  onClick?: (e: React.MouseEvent) => void;
+  className?: string;
 }) => {
   const iconSvg = () => (
     <svg
@@ -17,7 +16,6 @@ export const Expand = (props: {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <rect x="26" width="3" height="56" rx="1.5" fill="#252932" />
       <rect
         x="56"
         y="26"
@@ -29,5 +27,5 @@ export const Expand = (props: {
       />
     </svg>
   );
-  return <IconButton svgImage={iconSvg()} {...props} />;
+  return <IconButtonTemplate svgImage={iconSvg()} {...props} />;
 };

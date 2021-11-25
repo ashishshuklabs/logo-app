@@ -1,19 +1,17 @@
-import React from "react";
-import styled from "styled-components";
-import { callbackify } from "util";
-import { designVariables } from "../../styles/globalVariables";
-import { IconButton } from "../form/button/IconButton";
+import { designVariables } from "../../../styles/globalVariables";
+import { IconButtonTemplate } from "./IconButtonTemplate";
 
-export const Collapse = (props: {
+export const Search = (props: {
   width?: string;
   height?: string;
   hoverColor?: string;
+  onClick?: (e: React.MouseEvent) => void;
+  className?: string;
 }) => {
   const iconSvg = () => (
     <svg
-      className="image"
-      width="100%"
-      height="100%"
+      width="24"
+      height="24"
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -24,5 +22,5 @@ export const Collapse = (props: {
       />
     </svg>
   );
-  return <IconButton svgImage={iconSvg()} {...props} />;
+  return <IconButtonTemplate svgImage={iconSvg()} {...props} />;
 };

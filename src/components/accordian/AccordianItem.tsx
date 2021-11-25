@@ -3,7 +3,8 @@ import styled from "styled-components";
 import { designVariables } from "../../styles/globalVariables";
 import expand from "../../assets/icon/Expand.png";
 import collapse from "../../assets/icon/Collapse.png";
-import { Expand } from "../icon/Expand";
+import { Expand } from "../form/button/Expand";
+import { Collapse } from "../form/button/Collapse";
 
 interface AccordianItemProps {
   headerTag: string;
@@ -43,19 +44,18 @@ export const AccordianItem = (props: AccordianItemProps) => {
         </div>
         <div className="buttons">
           <div className="wrapper">
-            <button
-              className="expand"
+            <Expand
+              width="3.5rem"
+              height="3.5rem"
               onClick={(e) => handleClick(e, "expand")}
-            >
-              <img src={expand} alt="expand" />
-              {/* <Expand width="3.5rem" height="3.5rem" /> */}
-            </button>
-            <button
-              className="collapse"
+              className="expand"
+            />
+            <Collapse
+              width="3.5rem"
+              height="3.5rem"
               onClick={(e) => handleClick(e, "collapse")}
-            >
-              <img src={collapse} alt="collapse" />
-            </button>
+              className="collapse"
+            />
           </div>
         </div>
       </div>
@@ -116,16 +116,10 @@ const Wrapper = styled.div<{
       .expand {
         ${(props) =>
           props.showButton.plus ? { display: "block" } : { display: "none" }}
-        background: transparent;
-        border: 0;
-        cursor: pointer;
       }
       .collapse {
         ${(props) =>
           props.showButton.minus ? { display: "block" } : { display: "none" }}
-        background: transparent;
-        border: 0;
-        cursor: pointer;
       }
     }
   }

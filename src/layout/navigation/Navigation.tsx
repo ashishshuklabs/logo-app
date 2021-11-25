@@ -6,7 +6,7 @@ import phone from "../../assets/icon/Phone.png";
 import ceda from "../../assets/icon/CEDA.png";
 import avatar from "../../assets/icon/Avatar.png";
 import support from "../../assets/icon/Support.png";
-import { Search } from "../../components/icon/Search";
+import { Search } from "../../components/form/button/Search";
 import { TextButton } from "../../components/form/button/TextButton";
 import logo from "../../assets/images/Vector.png";
 import hamburger from "../../assets/icon/Group 190.png";

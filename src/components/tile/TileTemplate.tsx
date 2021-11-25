@@ -6,7 +6,7 @@ export interface TileProps {
   title: string;
   bodyText: string;
 }
-export const Tile = (props: TileProps) => {
+export const TileTemplate = (props: TileProps) => {
   return (
     <StyledTile title={props.title}>
       <div className="title">{props.title}</div>

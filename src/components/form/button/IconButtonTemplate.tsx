@@ -1,25 +1,34 @@
+import { prependOnceListener } from "process";
 import React from "react";
 import styled from "styled-components";
-import { callbackify } from "util";
 import { designVariables } from "../../../styles/globalVariables";
 
-export const IconButton = (props: {
+export const IconButtonTemplate = (props: {
   width?: string;
   height?: string;
   hoverColor?: string;
   svgImage: JSX.Element;
+  onClick?: (e: React.MouseEvent) => void;
+  className?: string;
 }) => {
+  const { onClick, ...rest } = props;
+  const handleClick = (e: React.MouseEvent) => {
+    if (onClick) {
+      onClick(e);
+    }
+  };
   return (
-    <Wrapper {...props}>
+    <Wrapper onClick={handleClick} {...rest}>
       {props.svgImage}
     </Wrapper>
   );
 };
 
-const Wrapper = styled.div<{
+const Wrapper = styled.button<{
   width?: string;
   height?: string;
   hoverColor?: string;
+  className?: string;
 }>`
   ${(props) =>
     props.width && {
@@ -28,6 +37,10 @@ const Wrapper = styled.div<{
     }}
   position: relative;
   transition: ${designVariables.transition};
+  cursor: pointer;
+  border: 0;
+  outline: 0;
+  background: transparent;
   svg {
     position: absolute;
     top: 50%;
@@ -41,4 +54,5 @@ const Wrapper = styled.div<{
     background: ${(props) =>
       props.hoverColor ? props.hoverColor : "transparent"};
   }
+  ${props => props.className}
 `;
