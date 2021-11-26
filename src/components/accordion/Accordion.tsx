@@ -1,42 +1,51 @@
-import React, { MouseEvent } from "react";
-import styled from "styled-components";
+import React, { MouseEvent, useState } from "react";
+import styled, { keyframes } from "styled-components";
 import { designVariables } from "../../styles/globalVariables";
-import expand from "../../assets/icon/Expand.png";
-import collapse from "../../assets/icon/Collapse.png";
 import { Expand } from "../form/button/Expand";
 import { Collapse } from "../form/button/Collapse";
 
-interface AccordianItemProps {
+interface AccordionProps {
   headerTag: string;
   headerTitle: string;
   content: string;
   onClick: (e: MouseEvent, buttonClicked: "expand" | "collapse") => void;
   isOpen: boolean;
+  animation?: boolean;
 }
-export const AccordianItem = (props: AccordianItemProps) => {
+export const Accordion = (props: AccordionProps) => {
+  const { animation = true } = props;
   const [showButton, setShowButton] = React.useState({
     plus: true,
     minus: false,
   });
+  const [showHide, setShowHide] = useState<"show" | "hide">("hide");
   const handleClick = (e: MouseEvent, buttonClicked: "expand" | "collapse") => {
     if (props.onClick) {
       props.onClick(e, buttonClicked);
     }
     if (buttonClicked === "expand") {
       setShowButton({ plus: false, minus: true });
+      setShowHide("show");
       return;
     }
     setShowButton({ plus: true, minus: false });
+    setShowHide("hide");
   };
   React.useEffect(() => {
     if (props.isOpen) {
       setShowButton({ plus: false, minus: true });
+      setShowHide("show");
       return;
     }
     setShowButton({ plus: true, minus: false });
+    setShowHide("hide");
   }, [props.isOpen]);
   return (
-    <Wrapper showButton={showButton} isExpanded={props.isOpen}>
+    <Wrapper
+      animation={animation}
+      showButton={showButton}
+      isExpanded={props.isOpen}
+    >
       <div className="header">
         <div className="header-content">
           <h6 className="header-tag">{props.headerTag}</h6>
@@ -59,7 +68,7 @@ export const AccordianItem = (props: AccordianItemProps) => {
           </div>
         </div>
       </div>
-      <div className="content">{props.content}</div>
+      <div className={`content ${showHide} `}>{props.content}</div>
     </Wrapper>
   );
 };
@@ -67,6 +76,7 @@ export const AccordianItem = (props: AccordianItemProps) => {
 const Wrapper = styled.div<{
   showButton: { plus: boolean; minus: boolean };
   isExpanded: boolean;
+  animation: boolean;
 }>`
   width: 100%;
   margin: 2rem auto;
@@ -123,13 +133,27 @@ const Wrapper = styled.div<{
       }
     }
   }
-  transition: all 1s ease-in-out;
+  transition: ${(props) => props.animation && "all 1s ease-in-out"};
   .content {
     padding: 2rem 5rem;
     color: ${designVariables.palette.dark400};
     font-size: 1rem;
-    ${(props) =>
-      props.isExpanded ? { display: "block" } : { display: "none" }}
+    transition: all 0.5s linear;
+    &.show {
+      opacity: 1;
+      height: 100%;
+      padding: 2rem 5rem;
+      /* display: block; */
+    }
+    &.hide {
+      opacity: 0;
+      height: 0;
+      padding: 0;
+    }
+    /* ${(props) =>
+      props.isExpanded
+        ? { opacity: 1 }
+        : { opacity: 0, height: 0, padding: 0 }} */
   }
   @media (max-width: 767px) {
     .header {

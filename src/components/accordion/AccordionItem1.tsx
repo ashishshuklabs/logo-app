@@ -1,11 +1,11 @@
-import { AccordianItem } from "./AccordianItem";
+import { Accordion } from "./Accordion";
 
-export const AccordianItem1 = (props: {
+export const AccordionItem1 = (props: {
   isOpen: boolean;
   onClick: (e: React.MouseEvent, buttonClicked: "expand" | "collapse") => void;
 }) => {
   return (
-    <AccordianItem
+    <Accordion
       {...props}
       headerTag="ACCORDIAN Expand STYLE"
       headerTitle="Duis aute irure dolor in reprehenderit in voluptate velit esse

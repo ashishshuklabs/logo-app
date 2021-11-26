@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { AccordianItem1 } from "./AccordianItem1";
-import { AccordianItem2 } from "./AccordianItem2";
+import { AccordionItem1 } from "./AccordionItem1";
+import { AccordionItem2 } from "./AccordionItem2";
 
-export const Accordian = () => {
+export const AccordionContainer = () => {
   const [isOpen, setIsOpen] = React.useState({ item1: false, item2: false });
   const handleClick = (
     e: React.MouseEvent,
@@ -27,13 +27,13 @@ export const Accordian = () => {
   };
   return (
     <StyledAccordianSection>
-      <AccordianItem1
+      <AccordionItem1
         isOpen={isOpen.item1}
         onClick={(e: React.MouseEvent, buttonClicked: "expand" | "collapse") =>
           handleClick(e, buttonClicked, "item1")
         }
       />
-      <AccordianItem2
+      <AccordionItem2
         isOpen={isOpen.item2}
         onClick={(e: React.MouseEvent, buttonClicked: "expand" | "collapse") =>
           handleClick(e, buttonClicked, "item2")
@@ -47,7 +47,8 @@ const StyledAccordianSection = styled.section`
   max-width: 60rem;
   padding: 0 1rem;
   width: 100%;
-  margin: 4rem auto;
+  min-height: 45rem;
+  margin: 5rem auto;
   display: flex;
   flex-direction: column;
 `;
