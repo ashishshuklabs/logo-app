@@ -89,7 +89,7 @@ const Wrapper = styled.div<{
     height: 100%;
     align-items: center;
     justify-content: space-around;
-
+    padding-left: 1rem;
     &-tag {
       text-transform: uppercase;
       font-size: 0.875rem;
@@ -133,15 +133,15 @@ const Wrapper = styled.div<{
       }
     }
   }
-  transition: ${(props) => props.animation && "all 1s ease-in-out"};
   .content {
     padding: 2rem 5rem;
     color: ${designVariables.palette.dark400};
     font-size: 1rem;
-    transition: all 0.5s linear;
+    transition: ${(props) => props.animation && "all .1s linear"};
+
     &.show {
       opacity: 1;
-      height: 100%;
+      height: 40rem;
       padding: 2rem 5rem;
       /* display: block; */
     }

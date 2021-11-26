@@ -1,6 +1,6 @@
 # Complete website landing page
 
-#### Accordian component
+#### Accordion component
 #### Customized form components - Checkboxes, buttons, buttons with/without icons, lots of styling on different states
 #### React
 #### Styled Components
@@ -8,3 +8,4 @@
 #### typescript
 #### html/css
 #### responsive
+#### basic onClick animation for accordion.

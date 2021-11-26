@@ -104,13 +104,13 @@ const StyledNav = styled.nav`
 `;
 export const Navigation = () => {
   const SearchButton = () => (
-    <button className="icon-button">
+    <div className="icon-button">
       <Search
         hoverColor={designVariables.palette.light300}
         height="1.5rem"
         width="1.5rem"
       />
-    </button>
+    </div>
   );
   return (
     <StyledNav>
