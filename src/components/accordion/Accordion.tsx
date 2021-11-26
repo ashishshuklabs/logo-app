@@ -134,21 +134,18 @@ const Wrapper = styled.div<{
     }
   }
   .content {
-    padding: 2rem 5rem;
     color: ${designVariables.palette.dark400};
     font-size: 1rem;
     transition: ${(props) => props.animation && "all .1s linear"};
-
+    //somehow the animation leaves a few lines on the page, can only see them in dev tools though.
     &.show {
       opacity: 1;
-      height: 40rem;
+      height: 100%;
       padding: 2rem 5rem;
-      /* display: block; */
     }
     &.hide {
       opacity: 0;
       height: 0;
-      padding: 0;
     }
     /* ${(props) =>
       props.isExpanded

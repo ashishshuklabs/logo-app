@@ -7,5 +7,5 @@
 #### vitejs
 #### typescript
 #### html/css
-#### responsive
+#### completely responsive
 #### basic onClick animation for accordion.
